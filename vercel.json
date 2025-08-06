@@ -1,21 +1,10 @@
 {
   "version": 2,
-  "name": "dailysz",
-  "builds": [
+  "name": "dailysz-game",
+  "rewrites": [
     {
-      "src": "build/web-mobile/**",
-      "use": "@vercel/static"
+      "source": "/(.*)",
+      "destination": "/build/web-mobile/$1"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/build/web-mobile/$1"
-    }
-  ],
-  "functions": {
-    "build/web-mobile/index.html": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
