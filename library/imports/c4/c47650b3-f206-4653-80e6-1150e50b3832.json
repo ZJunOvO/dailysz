@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_tc_anhong",
+    "texture": "1ab9ec9d-af27-4454-a2e1-bcd5bd2e7756",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      183,
+      66
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      183,
+      66
+    ],
+    "capInsets": [
+      68,
+      24,
+      62,
+      34
+    ]
+  }
+}

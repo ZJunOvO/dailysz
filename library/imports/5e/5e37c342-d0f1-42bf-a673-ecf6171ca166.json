@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "qiri_5",
+    "texture": "9235763a-6e54-40a1-9fd7-3126ba99be8c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      37,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      37,
+      40
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

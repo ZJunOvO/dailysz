@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "pintu_43_1",
+    "texture": "dd62cdd3-354e-467d-a135-1503db92b63d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      69,
+      71
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      69,
+      71
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

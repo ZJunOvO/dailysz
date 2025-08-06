@@ -1,0 +1,55 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "jigsaw_tile_spr",
+    "root": {
+      "__id__": 1
+    },
+    "node": {
+      "__id__": 1
+    },
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "readonly": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "jigsaw_tile_spr",
+    "_components": [
+      {
+        "__type__": "cc.Sprite",
+        "_srcBlendFactor": 1,
+        "_sizeMode": 2,
+        "_isTrimmedMode": false,
+        "node": {
+          "__id__": 1
+        },
+        "_materials": [
+          {
+            "__uuid__": "2550338c-a0fd-44b1-b9f8-2080ea96793e"
+          }
+        ],
+        "_spriteFrame": {
+          "__uuid__": "9e46e920-77e6-4dd0-a19a-c8155e910e7e"
+        }
+      }
+    ],
+    "_prefab": {
+      "__type__": "cc.PrefabInfo",
+      "root": {
+        "__id__": 1
+      },
+      "asset": {
+        "__id__": 0
+      }
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 79,
+      "height": 69
+    }
+  }
+]

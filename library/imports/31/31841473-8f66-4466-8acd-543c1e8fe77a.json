@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "quwei_2",
+    "texture": "3aed152c-de4a-49e6-8492-6e069a5ce9a6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      117,
+      31
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      117,
+      31
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

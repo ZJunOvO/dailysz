@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "small-fade",
+    "texture": "03957a6d-7e60-4f73-913e-80f9b4707fce",
+    "atlas": "",
+    "rect": [
+      0,
+      9,
+      64,
+      55
+    ],
+    "offset": [
+      0,
+      -4.5
+    ],
+    "originalSize": [
+      64,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

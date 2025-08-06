@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_gongyong",
+    "texture": "48184ad1-eed9-49c9-a21a-5295185cae47",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      720,
+      1558
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      720,
+      1558
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

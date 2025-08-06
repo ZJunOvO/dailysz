@@ -1,0 +1,27 @@
+
+boom.png
+size: 213,213
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hbw_caidai
+  rotate: false
+  xy: 1, 197
+  size: 16, 15
+  orig: 18, 18
+  offset: 0, 2
+  index: -1
+star_12
+  rotate: false
+  xy: 18, 112
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+xing_0117
+  rotate: true
+  xy: 1, 1
+  size: 110, 115
+  orig: 128, 128
+  offset: 9, 8
+  index: -1

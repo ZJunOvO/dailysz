@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "dailysz",
+  "builds": [
+    {
+      "src": "build/web-mobile/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/build/web-mobile/$1"
+    }
+  ],
+  "functions": {
+    "build/web-mobile/index.html": {
+      "maxDuration": 10
+    }
+  }
+}

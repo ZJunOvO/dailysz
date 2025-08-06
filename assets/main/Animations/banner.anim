@@ -1,0 +1,1 @@
+{"__type__":"cc.AnimationClip","_name":"banner","_duration":0.4166666666666667,"curveData":{"paths":{"pNode":{"comps":{},"props":{"opacity":[{"frame":0,"value":0},{"frame":0.3333333333333333,"value":255}],"y":[{"frame":0,"value":-75},{"frame":0.3333333333333333,"value":10},{"frame":0.4166666666666667,"value":0}]}}}}}

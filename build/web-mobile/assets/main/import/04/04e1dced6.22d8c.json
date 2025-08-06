@@ -1,0 +1,178 @@
+[
+  1,
+  [
+    "28isoHQZFLbYX18TLAGZ8d",
+    "9bPe1XptVNW5CAvULkK5y2",
+    "efR4N15+BGeq0VkIFv2FFU",
+    "1exFukQahJ9YDgSfG/XPvw"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    [
+      [
+        {
+          "name": "img_hf_l",
+          "rect": [
+            0,
+            0,
+            183,
+            66
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            183,
+            66
+          ],
+          "capInsets": [
+            87,
+            24,
+            78,
+            35
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "zjm_sz_9",
+          "rect": [
+            0,
+            0,
+            45,
+            70
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            45,
+            70
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      [
+        {
+          "name": "bei_01",
+          "rect": [
+            0,
+            0,
+            82,
+            85
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            82,
+            85
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ],
+    [
+      [
+        {
+          "name": "img_zjm_sldi",
+          "rect": [
+            0,
+            0,
+            95,
+            29
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            95,
+            29
+          ],
+          "capInsets": [
+            35,
+            0,
+            34,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        3
+      ]
+    ]
+  ]
+]

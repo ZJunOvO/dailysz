@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_zjm_hyph",
+    "texture": "7716d0bd-7ea7-4664-8a5c-6a6d012811aa",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      64
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      64
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "skeleton",
+  "_objFlags": 0,
+  "_native": "",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "2zBviSFekYiDES3zvNRCwNBlOSE",
+      "spine": "3.8.75",
+      "x": -191.93,
+      "y": -714.4,
+      "width": 720,
+      "height": 1280,
+      "images": "",
+      "audio": ""
+    },
+    "bones": [
+      {
+        "name": "root"
+      },
+      {
+        "name": "bone",
+        "parent": "root"
+      },
+      {
+        "name": "bone2",
+        "parent": "root",
+        "x": 237.83,
+        "y": -54.32
+      }
+    ],
+    "slots": [
+      {
+        "name": "未标题-1",
+        "bone": "bone2"
+      },
+      {
+        "name": "image 13",
+        "bone": "bone",
+        "attachment": "41"
+      }
+    ],
+    "skins": [
+      {
+        "name": "default",
+        "attachments": {
+          "image 13": {
+            "13": {
+              "width": 90,
+              "height": 90
+            },
+            "15": {
+              "width": 90,
+              "height": 90
+            },
+            "17": {
+              "width": 90,
+              "height": 90
+            },
+            "19": {
+              "width": 90,
+              "height": 90
+            },
+            "21": {
+              "width": 90,
+              "height": 90
+            },
+            "23": {
+              "width": 90,
+              "height": 90
+            },
+            "25": {
+              "width": 90,
+              "height": 90
+            },
+            "27": {
+              "width": 90,
+              "height": 90
+            },
+            "29": {
+              "width": 90,
+              "height": 90
+            },
+            "31": {
+              "width": 90,
+              "height": 90
+            },
+            "33": {
+              "width": 90,
+              "height": 90
+            },
+            "35": {
+              "width": 90,
+              "height": 90
+            },
+            "37": {
+              "width": 90,
+              "height": 90
+            },
+            "39": {
+              "width": 90,
+              "height": 90
+            },
+            "41": {
+              "width": 90,
+              "height": 90
+            }
+          }
+        }
+      }
+    ],
+    "animations": {
+      "animation": {
+        "slots": {
+          "image 13": {
+            "attachment": [
+              {
+                "name": "13"
+              },
+              {
+                "time": 0.1,
+                "name": "15"
+              },
+              {
+                "time": 0.1667,
+                "name": "17"
+              },
+              {
+                "time": 0.2667,
+                "name": "19"
+              },
+              {
+                "time": 0.3333,
+                "name": "21"
+              },
+              {
+                "time": 0.4333,
+                "name": "23"
+              },
+              {
+                "time": 0.5,
+                "name": "25"
+              },
+              {
+                "time": 0.6,
+                "name": "27"
+              },
+              {
+                "time": 0.6667,
+                "name": "29"
+              },
+              {
+                "time": 0.7667,
+                "name": "31"
+              },
+              {
+                "time": 0.8333,
+                "name": "33"
+              },
+              {
+                "time": 0.9333,
+                "name": "35"
+              },
+              {
+                "time": 1,
+                "name": "37"
+              },
+              {
+                "time": 1.1,
+                "name": "39"
+              },
+              {
+                "time": 1.1667,
+                "name": "41"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\r\nskeleton.png\r\nsize: 432,247\r\nformat: RGBA8888\r\nfilter: Linear,Linear\r\nrepeat: none\r\n13\r\n  rotate: false\r\n  xy: 342, 0\r\n  size: 90, 83\r\n  orig: 90, 90\r\n  offset: 0, 3\r\n  index: -1\r\n15\r\n  rotate: false\r\n  xy: 343, 167\r\n  size: 80, 80\r\n  orig: 90, 90\r\n  offset: 6, 4\r\n  index: -1\r\n17\r\n  rotate: true\r\n  xy: 0, 89\r\n  size: 80, 83\r\n  orig: 90, 90\r\n  offset: 6, 4\r\n  index: -1\r\n19\r\n  rotate: true\r\n  xy: 257, 168\r\n  size: 79, 84\r\n  orig: 90, 90\r\n  offset: 6, 3\r\n  index: -1\r\n21\r\n  rotate: true\r\n  xy: 257, 85\r\n  size: 81, 84\r\n  orig: 90, 90\r\n  offset: 5, 2\r\n  index: -1\r\n23\r\n  rotate: true\r\n  xy: 0, 6\r\n  size: 81, 82\r\n  orig: 90, 90\r\n  offset: 5, 4\r\n  index: -1\r\n25\r\n  rotate: false\r\n  xy: 85, 89\r\n  size: 81, 80\r\n  orig: 90, 90\r\n  offset: 5, 5\r\n  index: -1\r\n27\r\n  rotate: false\r\n  xy: 84, 6\r\n  size: 81, 81\r\n  orig: 90, 90\r\n  offset: 5, 5\r\n  index: -1\r\n29\r\n  rotate: false\r\n  xy: 167, 4\r\n  size: 84, 81\r\n  orig: 90, 90\r\n  offset: 3, 5\r\n  index: -1\r\n31\r\n  rotate: false\r\n  xy: 168, 87\r\n  size: 87, 80\r\n  orig: 90, 90\r\n  offset: 2, 5\r\n  index: -1\r\n33\r\n  rotate: false\r\n  xy: 343, 85\r\n  size: 87, 80\r\n  orig: 90, 90\r\n  offset: 2, 5\r\n  index: -1\r\n35\r\n  rotate: false\r\n  xy: 0, 171\r\n  size: 80, 76\r\n  orig: 90, 90\r\n  offset: 6, 7\r\n  index: -1\r\n37\r\n  rotate: false\r\n  xy: 82, 171\r\n  size: 84, 76\r\n  orig: 90, 90\r\n  offset: 3, 7\r\n  index: -1\r\n39\r\n  rotate: false\r\n  xy: 168, 169\r\n  size: 87, 78\r\n  orig: 90, 90\r\n  offset: 2, 6\r\n  index: -1\r\n41\r\n  rotate: false\r\n  xy: 253, 2\r\n  size: 87, 81\r\n  orig: 90, 90\r\n  offset: 2, 5\r\n  index: -1\r\n",
+  "textures": [
+    {
+      "__uuid__": "10359063-bd01-440b-b399-8c6c070f1ec6"
+    }
+  ],
+  "textureNames": [
+    "skeleton.png"
+  ],
+  "scale": 1
+}

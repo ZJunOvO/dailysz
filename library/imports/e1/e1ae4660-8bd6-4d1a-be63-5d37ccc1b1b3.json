@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_qws_jrb",
+    "texture": "1eab42ab-9e59-43a1-89ce-a679f8551586",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      127,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      127,
+      56
+    ],
+    "capInsets": [
+      51,
+      0,
+      46,
+      0
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+info face="face" size=36
+common lineHeight=36 scaleW=0 scaleH=0 pages=1
+page id=0 file="font6_0.png"
+chars count=10
+char id=48 x=218 y=0 width=52 height=70 xoffset=0 yoffset=0 xadvance=52 page=0 chnl=15
+char id=49 x=479 y=0 width=47 height=70 xoffset=0 yoffset=0 xadvance=47 page=0 chnl=15
+char id=50 x=377 y=0 width=51 height=70 xoffset=0 yoffset=0 xadvance=51 page=0 chnl=15
+char id=51 x=271 y=0 width=52 height=70 xoffset=0 yoffset=0 xadvance=52 page=0 chnl=15
+char id=52 x=0 y=0 width=54 height=70 xoffset=0 yoffset=0 xadvance=54 page=0 chnl=15
+char id=53 x=110 y=0 width=53 height=70 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=54 x=55 y=0 width=54 height=70 xoffset=0 yoffset=0 xadvance=54 page=0 chnl=15
+char id=55 x=429 y=0 width=49 height=70 xoffset=0 yoffset=0 xadvance=49 page=0 chnl=15
+char id=56 x=324 y=0 width=52 height=70 xoffset=0 yoffset=0 xadvance=52 page=0 chnl=15
+char id=57 x=164 y=0 width=53 height=70 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15

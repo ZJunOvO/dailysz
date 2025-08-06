@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_js_guan",
+    "texture": "f9472807-b799-45e4-8288-d9f825a2a8f0",
+    "atlas": "",
+    "rect": [
+      0,
+      9,
+      123,
+      113
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      123,
+      130
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

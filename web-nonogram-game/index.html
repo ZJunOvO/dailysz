@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>卷宝专属数织游戏</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <!-- 顶部状态栏 -->
+    <header class="top-bar">
+        <div class="user-info">
+            <div class="avatar" id="userAvatar">👸</div>
+            <span class="username" id="userName">卷卷大王</span>
+        </div>
+        <div class="resources">
+            <div class="cash-display">
+                <span class="cash-icon">💰</span>
+                <span class="cash-amount" id="cashAmount">¥5.00</span>
+            </div>
+            <div class="coins-display">
+                <span class="coin-icon">🪙</span>
+                <span class="coin-amount" id="coinAmount">1000</span>
+            </div>
+            <div class="power-display">
+                <span class="power-icon">⚡</span>
+                <span class="power-amount" id="powerAmount">100/100</span>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button class="btn btn-secondary" id="settingsBtn">设置</button>
+            <button class="btn btn-secondary" id="recordBtn">记录</button>
+        </div>
+    </header>
+
+    <!-- 主游戏区域 -->
+    <main class="game-container">
+        <!-- 主菜单界面 -->
+        <div class="screen" id="mainMenu">
+            <div class="welcome-section">
+                <h1 class="game-title">卷宝专属数织游戏</h1>
+                <p class="game-subtitle">为卷宝定制的浪漫解谜游戏 💕</p>
+            </div>
+            
+            <div class="menu-buttons">
+                <button class="btn btn-primary btn-large" id="startGameBtn">开始游戏</button>
+                <button class="btn btn-secondary" id="levelSelectBtn">关卡选择</button>
+                <button class="btn btn-secondary" id="practiceBtn">练习模式</button>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">连胜次数</span>
+                    <span class="stat-value" id="winStreakStat">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">完成关卡</span>
+                    <span class="stat-value" id="completedLevelsStat">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">累计奖励</span>
+                    <span class="stat-value" id="totalRewardStat">¥5.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏界面 (重构版 - 解密游戏布局) -->
+        <div class="screen hidden" id="gameScreen">
+            <!-- 顶部状态栏 -->
+            <div class="game-status-bar">
+                <div class="status-left">
+                    <div class="life-display">
+                        <span class="life-icon">❤️</span>
+                        <span class="life-count" id="lifeCount">3</span>
+                    </div>
+                    <div class="streak-display">
+                        <span class="streak-icon">🔥</span>
+                        <span class="streak-count" id="streakCount">0</span>
+                    </div>
+                </div>
+                <div class="status-center">
+                    <span class="level-name" id="levelName">关卡 1</span>
+                </div>
+                <div class="status-right">
+                    <button class="btn btn-menu" id="gameMenuBtn">⚙️</button>
+                </div>
+            </div>
+
+            <!-- 游戏模式切换 -->
+            <div class="game-mode-tabs">
+                <button class="mode-tab active" id="errorModeTab" data-mode="error">
+                    <span class="tab-icon">❌</span>
+                    <span class="tab-text">排错模式</span>
+                </button>
+                <button class="mode-tab" id="flipModeTab" data-mode="flip">
+                    <span class="tab-icon">🔄</span>
+                    <span class="tab-text">翻转模式</span>
+                </button>
+            </div>
+
+            <!-- 游戏盘容器 -->
+            <div class="game-board-container">
+                <div class="game-board" id="gameBoard">
+                    <!-- 数织游戏区域将由JavaScript动态生成 -->
+                </div>
+            </div>
+
+            <!-- 道具栏 -->
+            <div class="tools-bar">
+                <div class="tool-item" id="shovelTool">
+                    <button class="tool-btn" data-tool="shovel">
+                        <span class="tool-icon">🪣</span>
+                    </button>
+                    <span class="tool-count" id="shovelCount">3</span>
+                    <span class="tool-name">铲子</span>
+                </div>
+                <div class="tool-item" id="rocketTool">
+                    <button class="tool-btn" data-tool="rocket">
+                        <span class="tool-icon">🚀</span>
+                    </button>
+                    <span class="tool-count" id="rocketCount">1</span>
+                    <span class="tool-name">火箭</span>
+                </div>
+                <div class="tool-item" id="rakeTool">
+                    <button class="tool-btn" data-tool="rake">
+                        <span class="tool-icon">🔱</span>
+                    </button>
+                    <span class="tool-count" id="rakeCount">1</span>
+                    <span class="tool-name">钉耙</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 关卡选择界面 -->
+        <div class="screen hidden" id="levelSelectScreen">
+            <div class="screen-header">
+                <button class="btn btn-secondary" id="backToMenuBtn">返回</button>
+                <h2>关卡选择</h2>
+            </div>
+            
+            <div class="level-grid" id="levelGrid">
+                <!-- 关卡按钮将由JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <!-- 设置界面 -->
+        <div class="screen hidden" id="settingsScreen">
+            <div class="screen-header">
+                <button class="btn btn-secondary" id="backFromSettingsBtn">返回</button>
+                <h2>游戏设置</h2>
+            </div>
+            
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <input type="checkbox" id="soundToggle" checked>
+                        音效
+                    </label>
+                </div>
+                
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <input type="checkbox" id="musicToggle" checked>
+                        背景音乐
+                    </label>
+                </div>
+                
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <input type="checkbox" id="autoUnlockToggle" checked>
+                        自动解锁前51关
+                    </label>
+                </div>
+                
+                <div class="setting-item">
+                    <button class="btn btn-danger" id="resetDataBtn">清除所有数据</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 胜利弹窗 -->
+        <div class="modal hidden" id="winModal">
+            <div class="modal-content">
+                <h3>🎉 恭喜卷宝！</h3>
+                <div class="win-details">
+                    <p class="win-message" id="winMessage">成功完成关卡！</p>
+                    <div class="reward-breakdown" id="rewardBreakdown">
+                        <!-- 奖励详情将由JavaScript填充 -->
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="nextLevelBtn">下一关</button>
+                    <button class="btn btn-secondary" id="backToMenuFromWinBtn">返回主菜单</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <p>专为卷宝制作 💖 By 菌子</p>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="src/nonogramCore.js"></script>
+    <script src="src/rewardSystem.js"></script>
+    <script src="src/gameMain.js"></script>
+</body>
+</html>

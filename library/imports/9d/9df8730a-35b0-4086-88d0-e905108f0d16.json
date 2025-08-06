@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_zwf_anniu2",
+    "texture": "153e7405-efad-48c9-8344-2c5231fc90df",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      90,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      92,
+      56
+    ],
+    "capInsets": [
+      31,
+      0,
+      32,
+      0
+    ]
+  }
+}

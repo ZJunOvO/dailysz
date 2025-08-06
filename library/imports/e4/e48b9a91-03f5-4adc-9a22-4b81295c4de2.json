@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_tishiqipao",
+    "texture": "e7fd4ff3-c4a5-4bb9-9509-65d0fe8cf3b3",
+    "atlas": "",
+    "rect": [
+      16,
+      0,
+      144,
+      121
+    ],
+    "offset": [
+      6,
+      0
+    ],
+    "originalSize": [
+      164,
+      121
+    ],
+    "capInsets": [
+      29,
+      20,
+      113,
+      80
+    ]
+  }
+}

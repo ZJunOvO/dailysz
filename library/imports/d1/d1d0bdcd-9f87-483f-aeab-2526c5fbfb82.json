@@ -1,0 +1,74 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "girl1",
+    "root": {
+      "__id__": 1
+    },
+    "node": {
+      "__id__": 1
+    },
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "readonly": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "gril",
+    "_components": [
+      {
+        "__type__": "sp.Skeleton",
+        "defaultSkin": "default",
+        "defaultAnimation": "idle",
+        "_preCacheMode": 2,
+        "_cacheMode": 2,
+        "premultipliedAlpha": false,
+        "_animationName": "idle",
+        "node": {
+          "__id__": 1
+        },
+        "_materials": [
+          {
+            "__uuid__": "7afd064b-113f-480e-b793-8817d19f63c3"
+          }
+        ],
+        "_N$skeletonData": {
+          "__uuid__": "975a1821-ccc0-4c40-b89c-92982d3db15b"
+        }
+      }
+    ],
+    "_prefab": {
+      "__type__": "cc.PrefabInfo",
+      "root": {
+        "__id__": 1
+      },
+      "asset": {
+        "__id__": 0
+      }
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 153.21,
+      "height": 275.08
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -176,
+        -251,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]

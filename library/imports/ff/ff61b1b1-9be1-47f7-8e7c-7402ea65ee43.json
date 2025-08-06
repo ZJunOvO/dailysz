@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_cz_czlb",
+    "texture": "dd494a67-8527-4f3f-be1e-ec1853c47195",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      656,
+      272
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      656,
+      272
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

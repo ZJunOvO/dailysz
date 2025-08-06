@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "zhuxian_14",
+    "texture": "66dbff9a-7dfa-4f25-994d-91905a9a15d0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      67
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      67
+    ],
+    "capInsets": [
+      29,
+      25,
+      30,
+      34
+    ]
+  }
+}

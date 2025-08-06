@@ -1,0 +1,141 @@
+{
+    "paths": {
+        "a4TcBBpBpL0aVAejaP5HcK": [
+            "1",
+            "cc.SpriteFrame",
+            1
+        ],
+        "f7ubjr/3NCSrFoYQ7a8ZBT": [
+            "1",
+            "cc.Texture2D"
+        ],
+        "76nGHNHc1MXJUWrrLZ/E4u": [
+            "2",
+            "cc.Texture2D"
+        ],
+        "afm9HdrJpAQKLkc36a1pEL": [
+            "2",
+            "cc.SpriteFrame",
+            1
+        ],
+        "36jAmv/eZNLbnDWE0mG/rE": [
+            "3",
+            "cc.SpriteFrame",
+            1
+        ],
+        "a5bZeCfHNNXLIh/kSKvaVq": [
+            "3",
+            "cc.Texture2D"
+        ],
+        "e6aGJ/kcFPuoruoJ3/m5U+": [
+            "4",
+            "cc.Texture2D"
+        ],
+        "f5rkrvFLVA75rE+njoQCxh": [
+            "4",
+            "cc.SpriteFrame",
+            1
+        ],
+        "0b+9Cy5ZFDB5cyfWqQdg4P": [
+            "5",
+            "cc.Texture2D"
+        ],
+        "af5MpVDDtJ16DI1ZwJiNoZ": [
+            "5",
+            "cc.SpriteFrame",
+            1
+        ],
+        "0d24t68gRARbTsZtDqNwd+": [
+            "6",
+            "cc.Texture2D"
+        ],
+        "3e+nt2p8VM6Y4sAJgcaNfk": [
+            "6",
+            "cc.SpriteFrame",
+            1
+        ],
+        "fbW3wvSJhII7jVCfKXWqzU": [
+            "data",
+            "cc.BufferAsset"
+        ],
+        "adLNEMUnRO14RNQ+sttIgl": [
+            "lihua",
+            "cc.ParticleAsset"
+        ]
+    },
+    "uuids": [
+        "0b+9Cy5ZFDB5cyfWqQdg4P",
+        "0d24t68gRARbTsZtDqNwd+",
+        "36jAmv/eZNLbnDWE0mG/rE",
+        "3e+nt2p8VM6Y4sAJgcaNfk",
+        "76nGHNHc1MXJUWrrLZ/E4u",
+        "a4TcBBpBpL0aVAejaP5HcK",
+        "a5bZeCfHNNXLIh/kSKvaVq",
+        "adLNEMUnRO14RNQ+sttIgl",
+        "afm9HdrJpAQKLkc36a1pEL",
+        "af5MpVDDtJ16DI1ZwJiNoZ",
+        "e6aGJ/kcFPuoruoJ3/m5U+",
+        "f5rkrvFLVA75rE+njoQCxh",
+        "f7ubjr/3NCSrFoYQ7a8ZBT",
+        "fbW3wvSJhII7jVCfKXWqzU"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {
+        "0b1d194c3": [
+            "0b+9Cy5ZFDB5cyfWqQdg4P",
+            "0d24t68gRARbTsZtDqNwd+",
+            "76nGHNHc1MXJUWrrLZ/E4u",
+            "a5bZeCfHNNXLIh/kSKvaVq",
+            "e6aGJ/kcFPuoruoJ3/m5U+",
+            "f7ubjr/3NCSrFoYQ7a8ZBT"
+        ]
+    },
+    "name": "practice",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0b1d194c3",
+            "6e003",
+            "36jAmv/eZNLbnDWE0mG/rE",
+            "af867",
+            "3e+nt2p8VM6Y4sAJgcaNfk",
+            "ea5f2",
+            "a4TcBBpBpL0aVAejaP5HcK",
+            "ceef6",
+            "adLNEMUnRO14RNQ+sttIgl",
+            "39d60",
+            "afm9HdrJpAQKLkc36a1pEL",
+            "c7fc0",
+            "af5MpVDDtJ16DI1ZwJiNoZ",
+            "8b1ec",
+            "f5rkrvFLVA75rE+njoQCxh",
+            "3ff3b",
+            "fbW3wvSJhII7jVCfKXWqzU",
+            "32a02"
+        ],
+        "native": [
+            "0b+9Cy5ZFDB5cyfWqQdg4P",
+            "dc037",
+            "0d24t68gRARbTsZtDqNwd+",
+            "098fd",
+            "76nGHNHc1MXJUWrrLZ/E4u",
+            "9b23a",
+            "a5bZeCfHNNXLIh/kSKvaVq",
+            "2418b",
+            "adLNEMUnRO14RNQ+sttIgl",
+            "63c7e",
+            "e6aGJ/kcFPuoruoJ3/m5U+",
+            "e57b9",
+            "f7ubjr/3NCSrFoYQ7a8ZBT",
+            "48c36",
+            "fbW3wvSJhII7jVCfKXWqzU",
+            "9789c"
+        ]
+    }
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "finger",
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "root": {
+      "__id__": 1
+    },
+    "node": {
+      "__id__": 1
+    },
+    "data": {
+      "__id__": 1
+    },
+    "readonly": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "finger",
+    "_components": [
+      {
+        "__type__": "cc.Sprite",
+        "node": {
+          "__id__": 1
+        },
+        "_materials": [
+          {
+            "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+          }
+        ],
+        "_spriteFrame": {
+          "__uuid__": "29cbc415-9d81-4d20-918e-bb962b71d9fc"
+        }
+      },
+      {
+        "__type__": "cc.Animation",
+        "playOnLoad": true,
+        "node": {
+          "__id__": 1
+        },
+        "_clips": [
+          {
+            "__uuid__": "89b6a575-3468-462a-9c3c-3f6668d01c91"
+          }
+        ],
+        "_defaultClip": {
+          "__uuid__": "89b6a575-3468-462a-9c3c-3f6668d01c91"
+        }
+      }
+    ],
+    "_prefab": {
+      "__type__": "cc.PrefabInfo",
+      "root": {
+        "__id__": 1
+      },
+      "asset": {
+        "__id__": 0
+      }
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 112,
+      "height": 141
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.1,
+      "y": 0.91
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        87.059,
+        9.418,
+        0,
+        0,
+        0,
+        0.17364817766693033,
+        0.984807753012208,
+        0.8,
+        0.8,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 20
+    }
+  }
+]

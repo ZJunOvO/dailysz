@@ -1,0 +1,63 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bottomHideBtns",
+  "_duration": 0.08333333333333333,
+  "curveData": {
+    "paths": {
+      "img": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 50
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "title": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "bg": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -2
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": -12
+            }
+          ]
+        },
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0,
+                "value": {
+                  "__uuid__": "60bcb13d-1390-4c3a-8ee2-19d0dd2dc79e"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

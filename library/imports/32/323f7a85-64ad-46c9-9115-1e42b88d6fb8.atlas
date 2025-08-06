@@ -1,0 +1,62 @@
+
+goose.png
+size: 223,71
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 175, 35
+  size: 46, 34
+  orig: 46, 34
+  offset: 0, 0
+  index: -1
+14
+  rotate: false
+  xy: 89, 4
+  size: 41, 16
+  orig: 41, 16
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 89, 22
+  size: 23, 47
+  orig: 23, 47
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 139, 23
+  size: 34, 46
+  orig: 34, 47
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 2, 5
+  size: 85, 64
+  orig: 85, 64
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 175, 2
+  size: 43, 31
+  orig: 43, 31
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 114, 22
+  size: 23, 47
+  orig: 23, 47
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 132, 5
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1

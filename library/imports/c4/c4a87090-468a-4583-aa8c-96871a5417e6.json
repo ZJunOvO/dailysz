@@ -1,0 +1,107 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hedge",
+  "_duration": 0.36666666666666664,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "dca3dd8c-8918-4041-9625-2c0a4440a4fe"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "14a166e2-163a-4d05-b021-9aa36212c8de"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "f0c6dab9-e28b-4c51-85ff-8437f61d1382"
+            }
+          },
+          {
+            "frame": 0.23333333333333334,
+            "value": {
+              "__uuid__": "b6d84827-70ff-4e15-b4d0-418e51320343"
+            }
+          },
+          {
+            "frame": 0.2833333333333333,
+            "value": {
+              "__uuid__": "b4757c59-333d-4e63-b197-3e340dbfc3bd"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "eff76f15-74a3-4d1e-8002-0f7932c88c7c"
+            }
+          },
+          {
+            "frame": 0.31666666666666665,
+            "value": {
+              "__uuid__": "a20dad90-fee4-453c-a565-cdaa26d8e5ec"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "dd18aff3-3fea-4c8b-a2c0-5d35d2badb9f"
+            }
+          },
+          {
+            "frame": 0.35,
+            "value": {
+              "__uuid__": "03f5500d-2e17-4742-b7c4-e6207e86b641"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "scale": [
+        {
+          "frame": 0,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.13333333333333333,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1.2,
+            "y": 1.2,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.2,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.23333333333333334,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1.5,
+            "y": 1.5,
+            "z": 1
+          }
+        }
+      ]
+    }
+  }
+}

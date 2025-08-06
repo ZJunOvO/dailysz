@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ali_exa1",
+    "texture": "17c3db96-d1c1-4070-8f10-3a9a7173c593",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      255,
+      207
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      255,
+      207
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

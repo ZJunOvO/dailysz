@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "FlareHQ2",
+    "texture": "6c64ed03-54ce-46e0-b32d-fa8896b16968",
+    "atlas": "",
+    "rect": [
+      12,
+      19,
+      118,
+      105
+    ],
+    "offset": [
+      1,
+      -1.5
+    ],
+    "originalSize": [
+      140,
+      140
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+CCEffect %{
+  techniques: 
+    - 
+      passes: 
+        - 
+          blendState: 
+            targets: 
+              - 
+                blend: true
+          rasterizerState: 
+            cullMode: 0
+          properties: 
+            round: 
+              value: 
+                - 0.1
+              editor: 
+                tooltip: "圆角半径（百分比）"
+            feather: 
+              value: 
+                - 0.01
+              editor: 
+                tooltip: "边缘虚化（百分比）"
+          vert: "vs"
+          frag: "fs"
+
+    }%
+    
+    CCProgram vs %{
+        
+precision highp float;
+#include <cc-global>
+
+in vec3 a_position;
+in vec2 a_uv0;
+in vec4 a_color;
+out vec2 v_uv0;
+out vec4 v_color;
+void main () {
+  gl_Position = cc_matViewProj * vec4(a_position, 1);
+  v_uv0 = a_uv0;
+  v_color = a_color;
+}
+    }%
+    
+    CCProgram fs %{
+        
+precision highp float;
+in vec2 v_uv0;
+in vec4 v_color;
+uniform sampler2D texture;
+uniform Properties {
+  float round;
+  float feather;
+};
+void main () {
+  vec4 color = v_color;
+  float dist = distance(v_uv0, vec2(0.5, 0.5));
+  float smoothDist = 1.0 - smoothstep(0.49, 0.5, dist);
+  color *= texture(texture, v_uv0);
+  color.a *= v_color.a * smoothDist;
+  gl_FragColor = color;
+}
+    }%
+    

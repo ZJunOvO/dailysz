@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "naozhong",
+    "texture": "3664427d-ed4f-4c19-a9f2-ce20aa34881b",
+    "atlas": "",
+    "rect": [
+      0,
+      5,
+      117,
+      116
+    ],
+    "offset": [
+      0,
+      -2.5
+    ],
+    "originalSize": [
+      117,
+      121
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

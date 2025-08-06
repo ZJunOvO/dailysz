@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_mrtz_nianfen",
+    "texture": "83480dc0-89a4-423d-bfe8-666e4253b628",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      57,
+      34
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      57,
+      34
+    ],
+    "capInsets": [
+      24,
+      0,
+      22,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "HedgePop_4",
+    "texture": "aebeea2a-ff62-4826-a857-a12625b59e40",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      79,
+      85
+    ],
+    "offset": [
+      -3,
+      0
+    ],
+    "originalSize": [
+      85,
+      85
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

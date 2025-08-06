@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_zwf_xhong",
+    "texture": "124ed222-7cf4-4a3b-bb14-0fb4dd7d34c5",
+    "atlas": "",
+    "rect": [
+      3,
+      3,
+      55,
+      54
+    ],
+    "offset": [
+      -1,
+      1
+    ],
+    "originalSize": [
+      63,
+      62
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"__type__":"cc.AnimationClip","_name":"tipOut","_duration":0.4,"sample":30,"curveData":{"paths":{"tip":{"props":{"opacity":[{"frame":0,"value":255},{"frame":0.4,"value":0}],"position":[{"frame":0,"value":[-46,38,0]},{"frame":0.4,"value":[-30.33,89.798,0]}],"angle":[{"frame":0,"value":0},{"frame":0.4,"value":40}]}}}}}

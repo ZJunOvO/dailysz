@@ -1,0 +1,104 @@
+
+chongzi.png
+size: 246,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cz
+  rotate: false
+  xy: 159, 9
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+cz1
+  rotate: false
+  xy: 131, 10
+  size: 27, 28
+  orig: 27, 28
+  offset: 0, 0
+  index: -1
+cz10
+  rotate: false
+  xy: 159, 24
+  size: 27, 14
+  orig: 27, 14
+  offset: 0, 0
+  index: -1
+cz11
+  rotate: false
+  xy: 104, 28
+  size: 26, 10
+  orig: 26, 10
+  offset: 0, 0
+  index: -1
+cz12
+  rotate: true
+  xy: 116, 12
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+cz13
+  rotate: true
+  xy: 104, 39
+  size: 38, 90
+  orig: 38, 90
+  offset: 0, 0
+  index: -1
+cz2
+  rotate: false
+  xy: 81, 9
+  size: 34, 18
+  orig: 34, 18
+  offset: 0, 0
+  index: -1
+cz3
+  rotate: true
+  xy: 225, 43
+  size: 34, 18
+  orig: 34, 18
+  offset: 0, 0
+  index: -1
+cz4
+  rotate: true
+  xy: 1, 28
+  size: 49, 102
+  orig: 49, 102
+  offset: 0, 0
+  index: -1
+cz5
+  rotate: false
+  xy: 1, 2
+  size: 79, 25
+  orig: 79, 25
+  offset: 0, 0
+  index: -1
+cz6
+  rotate: true
+  xy: 195, 5
+  size: 72, 29
+  orig: 72, 29
+  offset: 0, 0
+  index: -1
+cz7
+  rotate: false
+  xy: 81, 2
+  size: 8, 6
+  orig: 8, 6
+  offset: 0, 0
+  index: -1
+cz8
+  rotate: false
+  xy: 225, 1
+  size: 16, 13
+  orig: 18, 15
+  offset: 1, 1
+  index: -1
+cz9
+  rotate: false
+  xy: 225, 15
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1

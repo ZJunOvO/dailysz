@@ -1,0 +1,778 @@
+/* 数织游戏主题样式 - 继承废案项目设计 - v5.0 TOOLS-SYSTEM */
+
+:root {
+  /* 主题色彩 */
+  --primary-color: #ff6b9d;
+  --secondary-color: #4ecdc4;
+  --accent-color: #ffeaa7;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --danger-color: #e17055;
+  
+  /* 背景色 */
+  --bg-primary: #ffeef7;
+  --bg-secondary: #fff5f8;
+  --bg-card: #ffffff;
+  
+  /* 文字色 */
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-light: #b2bec3;
+  
+  /* 边框和阴影 */
+  --border-radius: 12px;
+  --box-shadow: 0 4px 20px rgba(255, 107, 157, 0.15);
+  --border-color: #ffe0ed;
+  
+  /* 字体 */
+  --font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* 棋盘相关 */
+  --cell-size: 55px;
+  --hint-font-size: 22px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* 通用按钮样式 */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  touch-action: manipulation;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #ff8fab);
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 107, 157, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 卡片样式 */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 24px;
+  border: 2px solid var(--border-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.card-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 网格布局 */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 棋盘相关样式 */
+.game-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 2px 120px 2px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+  justify-content: center;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: var(--bg-secondary);
+  padding: 8px;
+  border-radius: var(--border-radius);
+}
+
+.mode-toggle {
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--border-radius) - 4px);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.mode-toggle.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-areas: 
+    "empty    top-hints"
+    "left-hints  game-board";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  background: rgba(74, 85, 104, 0.1);
+  border-radius: 16px;
+  padding: 8px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
+  border: 1px solid rgba(255, 235, 238, 0.5);
+}
+
+.empty-corner {
+  grid-area: empty;
+  background: transparent;
+  border-radius: 4px;
+  width: 90px;
+  height: 90px;
+}
+
+.top-hints {
+  grid-area: top-hints;
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 8px 4px;
+}
+
+.left-hints {
+  grid-area: left-hints;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.top-hint-column {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  width: var(--cell-size);
+  padding: 4px 4px 4px 4px;
+  font-size: var(--hint-font-size);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.1;
+  background: transparent;
+  min-height: 90px;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.top-hint-column > div {
+  background: transparent;
+  border-radius: 0;
+  padding: 2px 0;
+  margin: 1px 0;
+  min-width: 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #4a5568;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+
+.left-hint-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: var(--cell-size);
+  padding: 4px 8px 4px 2px;
+  font-size: calc(var(--hint-font-size) * 0.9);
+  font-weight: 900;
+  color: var(--text-primary);
+  gap: 2px;
+  background: transparent;
+  width: 90px;
+  max-width: 90px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.left-hint-row > div {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 1px;
+  min-width: 12px;
+  max-width: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #4a5568;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+  flex-shrink: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: inherit;
+}
+
+.game-board {
+  grid-area: game-board;
+  display: grid;
+  gap: 1px;
+  background: var(--text-primary);
+  border-radius: 8px;
+}
+
+.game-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.15s ease;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.game-cell:hover {
+  background: var(--bg-secondary);
+}
+
+.game-cell:active {
+  transform: scale(0.95);
+}
+
+.game-cell.filled {
+  background: var(--primary-color);
+  color: white;
+}
+
+.game-cell.marked-empty {
+  background: white;
+  color: var(--text-secondary);
+}
+
+.game-cell.marked-empty::after {
+  content: "×";
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+/* 空白格子的优雅X提示 - 与用户标记的X区分 */
+.game-cell:not(.filled):not(.marked-empty)::before {
+  content: "×";
+  font-size: 12px;
+  color: rgba(178, 190, 195, 0.25);
+  font-weight: 200;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  position: absolute;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  transform: scale(0.8);
+}
+
+.game-cell:not(.filled):not(.marked-empty):hover::before {
+  opacity: 0.8;
+  color: rgba(178, 190, 195, 0.5);
+  transform: scale(1);
+}
+
+/* 移除过于明显的动画效果，保持简洁 */
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  :root {
+    --cell-size: 48px;
+    --hint-font-size: 18px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .btn-large {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+  
+  .game-board-container {
+    padding: 8px 1px 120px 1px;
+  }
+  
+  .puzzle-grid {
+    padding: 6px;
+  }
+  
+  .top-hint-column {
+    min-height: 75px;
+    padding: 3px 3px 3px 3px;
+  }
+  
+  .left-hint-row {
+    width: 75px;
+    max-width: 75px;
+    padding: 4px 6px 4px 2px;
+    gap: 2px;
+    font-size: calc(var(--hint-font-size) * 0.85);
+  }
+  
+  .left-hint-row > div {
+    min-width: 10px;
+    max-width: 18px;
+  }
+  
+  .empty-corner {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cell-size: 42px;
+    --hint-font-size: 16px;
+  }
+  
+  .game-board-container {
+    padding: 8px 1px 120px 1px;
+  }
+  
+  .puzzle-grid {
+    padding: 4px;
+  }
+  
+  .top-hint-column {
+    min-height: 65px;
+    padding: 2px 2px 2px 2px;
+  }
+  
+  .left-hint-row {
+    width: 65px;
+    max-width: 65px;
+    padding: 3px 5px 3px 1px;
+    gap: 1px;
+    font-size: calc(var(--hint-font-size) * 0.8);
+  }
+  
+  .left-hint-row > div {
+    min-width: 8px;
+    max-width: 16px;
+  }
+  
+  .empty-corner {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* 动画效果 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.slide-enter-from {
+  transform: translateX(100%);
+}
+
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
+/* 格子动画效果 */
+.game-cell {
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-origin: center;
+}
+
+.game-cell.flip-enter {
+  animation: modern-flip-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.game-cell.swipe-active {
+  animation: swipe-highlight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
+}
+
+.game-cell.tool-effect {
+  animation: tool-activate 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 填充模式动画 */
+@keyframes modern-flip-reveal {
+  0% {
+    transform: perspective(400px) rotateY(-90deg) scale(0.7);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(255, 107, 157, 0);
+  }
+  25% {
+    transform: perspective(400px) rotateY(-45deg) scale(0.85);
+    opacity: 0.5;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+  }
+  50% {
+    transform: perspective(400px) rotateY(0deg) scale(1.15);
+    opacity: 0.8;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+  }
+  75% {
+    transform: perspective(400px) rotateY(10deg) scale(1.05);
+    opacity: 0.95;
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.2);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg) scale(1);
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(255, 107, 157, 0.1);
+  }
+}
+
+/* 标记模式动画 */
+.game-cell.mark-enter {
+  animation: mark-reveal 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes mark-reveal {
+  0% {
+    transform: scale(0.3) rotate(-180deg);
+    opacity: 0;
+    color: transparent;
+  }
+  30% {
+    transform: scale(0.6) rotate(-90deg);
+    opacity: 0.6;
+    color: var(--text-secondary);
+  }
+  60% {
+    transform: scale(1.3) rotate(10deg);
+    opacity: 0.9;
+    color: var(--danger-color);
+  }
+  80% {
+    transform: scale(0.9) rotate(-5deg);
+    opacity: 1;
+    color: var(--danger-color);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    color: var(--text-secondary);
+  }
+}
+
+@keyframes swipe-highlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 107, 157, 0.5);
+    background-color: var(--primary-color);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 107, 157, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 107, 157, 0.5);
+  }
+}
+
+@keyframes tool-activate {
+  0% {
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: scale(0.9);
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    transform: scale(1.1);
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    transform: scale(1);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 工具预览效果 */
+.tool-preview-highlight {
+  background: rgba(255, 107, 157, 0.3) !important;
+  border: 2px solid var(--primary-color) !important;
+  animation: tool-preview-pulse 1s infinite;
+}
+
+@keyframes tool-preview-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* 完成状态的提示数字 */
+.hint-completed {
+  opacity: 0.5 !important;
+  background: var(--success-color) !important;
+  color: white !important;
+  animation: hint-complete 0.5s ease;
+}
+
+@keyframes hint-complete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 底部悬浮工具栏样式 */
+.floating-bottom-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 248, 0.95));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 107, 157, 0.2);
+  padding: 12px 16px 20px 16px;
+  box-shadow: 0 -4px 20px rgba(255, 107, 157, 0.15);
+  z-index: 1000;
+}
+
+.floating-toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.toolbar-tools {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.toolbar-mode-switch {
+  display: flex;
+  background: rgba(255, 107, 157, 0.1);
+  border-radius: 20px;
+  padding: 4px;
+  border: 1px solid rgba(255, 107, 157, 0.2);
+}
+
+.toolbar-mode-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.toolbar-mode-btn.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+}
+
+/* 道具使用遮罩效果 */
+.tool-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  pointer-events: none;
+}
+
+.tool-overlay.active {
+  pointer-events: auto;
+}
+
+/* 钉耙道具高亮提示 */
+.rake-hint-highlight {
+  animation: rake-hint-pulse 2s infinite;
+  position: relative;
+  z-index: 1000;
+}
+
+@keyframes rake-hint-pulse {
+  0%, 100% {
+    background: var(--bg-secondary);
+    box-shadow: 0 0 0 rgba(255, 107, 157, 0);
+    border: 2px solid transparent;
+  }
+  50% {
+    background: rgba(255, 107, 157, 0.15);
+    box-shadow: 0 0 25px rgba(255, 107, 157, 0.8), inset 0 0 20px rgba(255, 107, 157, 0.1);
+    border: 2px solid rgba(255, 107, 157, 0.6);
+  }
+}
+
+/* 铲子和火箭道具高亮提示 */
+.tool-board-highlight .game-cell {
+  animation: board-hint-pulse 2s infinite;
+  position: relative;
+  z-index: 1001;
+}
+
+@keyframes board-hint-pulse {
+  0%, 100% {
+    background: white;
+    box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+    border: 1px solid #ddd;
+  }
+  50% {
+    background: rgba(255, 193, 7, 0.25);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), inset 0 0 15px rgba(255, 193, 7, 0.2);
+    border: 1px solid rgba(255, 193, 7, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+/* 道具取消提示 */
+.tool-cancel-hint {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+/* iOS Safari 特殊优化 */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .btn, .game-cell {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .floating-bottom-toolbar {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+}

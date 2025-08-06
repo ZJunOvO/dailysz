@@ -1,0 +1,12 @@
+{
+  "__type__": "cc.Material",
+  "_name": "uvAni",
+  "_techniqueData": {
+    "0": {
+      "defines": {}
+    }
+  },
+  "_effectAsset": {
+    "__uuid__": "9c1ef90a-d148-4a2e-9f53-88ce799b800c"
+  }
+}

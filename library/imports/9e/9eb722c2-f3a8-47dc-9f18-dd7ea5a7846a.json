@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "loadingBack",
+  "_duration": 0.3333333333333333,
+  "curveData": {
+    "props": {
+      "width": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.3333333333333333,
+          "value": 1606
+        }
+      ],
+      "height": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.3333333333333333,
+          "value": 2640
+        }
+      ]
+    }
+  }
+}

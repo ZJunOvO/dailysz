@@ -1,0 +1,1 @@
+{"__type__":"cc.AnimationClip","_name":"crossShine","_duration":0.3333333333333333,"speed":0.5,"wrapMode":54,"curveData":{"props":{"opacity":[{"frame":0,"value":208},{"frame":0.3333333333333333,"value":255}],"scale":[{"frame":0,"value":{"__type__":"cc.Vec3","x":0.85,"y":0.85,"z":1}},{"frame":0.3333333333333333,"value":{"__type__":"cc.Vec3","x":1,"y":1,"z":1}}]}}}

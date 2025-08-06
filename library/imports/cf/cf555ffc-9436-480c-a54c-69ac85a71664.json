@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yinsi_1",
+    "texture": "f5abbb7d-b413-40af-ad1b-55a6d3f3b06b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      81,
+      42
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      81,
+      42
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

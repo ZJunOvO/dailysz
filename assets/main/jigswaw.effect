@@ -1,0 +1,88 @@
+CCEffect %{
+  techniques: 
+    - 
+      passes: 
+        - 
+          blendState: 
+            targets: 
+              - 
+                blend: true
+          rasterizerState: 
+            cullMode: 0
+          properties: 
+            alphaThreshold: 
+              value: 
+                - 0.5
+            texture: 
+              value: "white"
+            texture2: 
+              value: "white"
+          vert: "vs"
+          frag: "fs"
+
+    }%
+    
+    CCProgram vs %{
+        
+precision highp float;
+#include <cc-global>
+
+in vec3 a_position;
+in vec4 a_color;
+out lowp vec4 v_color;
+in vec2 a_uv0;
+out vec2 v_uv0;
+void main () {
+  mat4 mvp;
+  mvp = cc_matViewProj;
+  v_uv0 = a_uv0;
+  v_color = a_color;
+  gl_Position = mvp * vec4(a_position, 1);
+}
+    }%
+    
+    CCProgram fs %{
+        
+precision highp float;
+#include <cc-global>
+#include <cc-local>
+
+#if USE_ALPHA_TEST
+  uniform ALPHA_TEST {
+    float alphaThreshold;
+  };
+#endif
+in vec4 v_color;
+in vec2 v_uv0;
+uniform sampler2D texture;
+uniform sampler2D texture2;
+void main () {
+    float a = v_color.a;
+    if (a <= 0.0) {
+        a = 0.1;
+    }
+    float _x1 = v_color.r / a;
+    float _y1 = v_color.g / a;
+    float y = 0.09704641 * v_uv0.y + _y1;
+    float x = 0.11383285 * v_uv0.x + _x1;
+    float b = v_color.b / a;
+    if (b >= 0.8) {
+        x -= 0.07129886;
+    } else if (b >= 0.6) {
+        x -= 0.07129886;
+        y -= 0.03445850;
+    } else if (b >= 0.4) {
+        y -= 0.03445850;
+    } else if (b >= 0.2) {
+        y -= 0.08298171;
+    }
+    if (y < 0.0 || y > 1.0 || x < 0.0 || x > 1.0) {
+        gl_FragColor = vec4(0, 0, 0, 0);
+    } else {
+        vec4 color1 = texture2D(texture, v_uv0);
+        vec4 color2 = texture2D(texture2, vec2(x,y));
+        gl_FragColor = color2 * color1.a * v_color.a;
+    }
+}
+    }%
+    

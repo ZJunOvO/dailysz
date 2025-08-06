@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tt_exa",
+    "texture": "317f25e2-24bc-4ae0-b64e-7265e45e9689",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      477,
+      438
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      477,
+      438
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

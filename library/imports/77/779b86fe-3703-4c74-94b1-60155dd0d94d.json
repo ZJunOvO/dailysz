@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_mrtz_xxxx",
+    "texture": "9f2c0a2c-e0c5-472c-a50f-31982207d83a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      79,
+      88
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      79,
+      88
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

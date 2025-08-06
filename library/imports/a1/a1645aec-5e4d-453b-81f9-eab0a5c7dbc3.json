@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "CloudSoft",
+    "texture": "740410dd-0c80-4884-a4b6-1a7b903383b9",
+    "atlas": "",
+    "rect": [
+      5,
+      5,
+      247,
+      247
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

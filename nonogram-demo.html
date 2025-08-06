@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>数织游戏 - 5x5 Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mode-switch {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .mode-switch input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .current-mode {
+            font-weight: bold;
+            color: #007AFF;
+            padding: 8px 16px;
+            background: #f0f8ff;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .puzzle-grid {
+            display: grid;
+            grid-template-areas: 
+                "empty    top-hints"
+                "left-hints  game-board";
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 2px;
+            background: #ddd;
+            border-radius: 8px;
+            padding: 2px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .empty-corner {
+            grid-area: empty;
+            background: #f8f8f8;
+        }
+
+        .top-hints {
+            grid-area: top-hints;
+            display: flex;
+            background: #f8f8f8;
+        }
+
+        .top-hint-column {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 4px 2px;
+            font-weight: bold;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .left-hints {
+            grid-area: left-hints;
+            display: flex;
+            flex-direction: column;
+            background: #f8f8f8;
+        }
+
+        .left-hint-row {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2px 4px;
+            font-weight: bold;
+            color: #333;
+            gap: 2px;
+        }
+
+        .game-board {
+            grid-area: game-board;
+            display: grid;
+            gap: 1px;
+            background: #333;
+        }
+
+        .game-cell {
+            background: white;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
+        }
+
+        .game-cell:hover {
+            background: #f0f0f0;
+        }
+
+        .game-cell:active {
+            transform: scale(0.95);
+        }
+
+        .game-cell.filled {
+            background: #333;
+            color: white;
+        }
+
+        .game-cell.marked-empty {
+            background: white;
+            color: #999;
+        }
+
+        .game-cell.marked-empty::after {
+            content: "×";
+            font-size: 24px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .game-container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            body {
+                padding: 8px;
+            }
+            
+            .game-container {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="controls">
+            <div class="mode-switch">
+                <label for="modeToggle">标记模式</label>
+                <input type="checkbox" id="modeToggle">
+            </div>
+            <div class="current-mode" id="currentMode">填充模式</div>
+            <div style="margin-top: 10px;">
+                <label for="sizeSelect">棋盘大小：</label>
+                <select id="sizeSelect" style="padding: 4px 8px; font-size: 14px;">
+                    <option value="5">5×5</option>
+                    <option value="10">10×10</option>
+                    <option value="15">15×15</option>
+                    <option value="20">20×20</option>
+                </select>
+                <button id="resetBtn" style="margin-left: 10px; padding: 4px 12px; font-size: 14px;">重新开始</button>
+            </div>
+        </div>
+        
+        <div class="puzzle-grid">
+            <div class="empty-corner"></div>
+            
+            <div class="top-hints" id="topHints">
+                <!-- 顶部提示数字将通过JavaScript生成 -->
+            </div>
+            
+            <div class="left-hints" id="leftHints">
+                <!-- 左侧提示数字将通过JavaScript生成 -->
+            </div>
+            
+            <div class="game-board" id="gameBoard">
+                <!-- 游戏格子将通过JavaScript生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class NonogramGame {
+            constructor() {
+                this.size = 5;
+                this.board = Array(this.size).fill().map(() => Array(this.size).fill(0));
+                this.isMarkMode = false;
+                this.gameBoard = document.getElementById('gameBoard');
+                this.topHints = document.getElementById('topHints');
+                this.leftHints = document.getElementById('leftHints');
+                this.modeToggle = document.getElementById('modeToggle');
+                this.currentModeDisplay = document.getElementById('currentMode');
+                this.sizeSelect = document.getElementById('sizeSelect');
+                this.resetBtn = document.getElementById('resetBtn');
+                
+                // 示例提示数据 (可以根据不同尺寸动态生成)
+                this.sampleHints = {
+                    5: {
+                        rows: [[2], [1,1], [3], [1,1], [2]],
+                        cols: [[2], [1,1], [3], [1,1], [2]]
+                    },
+                    10: {
+                        rows: [[3,2], [1,1], [4], [2,2], [5], [1,3], [2,1], [3], [1,1,1], [4]],
+                        cols: [[2,1], [3], [1,2], [4], [2,2], [3,1], [1,1], [2], [3,1], [2,2]]
+                    },
+                    15: {
+                        rows: Array(15).fill([2,3]),
+                        cols: Array(15).fill([1,2,1])
+                    },
+                    20: {
+                        rows: Array(20).fill([3,2,1]),
+                        cols: Array(20).fill([2,1,3])
+                    }
+                };
+                
+                this.initializeGame();
+                this.bindEvents();
+            }
+
+            initializeGame() {
+                this.board = Array(this.size).fill().map(() => Array(this.size).fill(0));
+                this.createBoard();
+                this.createHints();
+                this.updateStyles();
+            }
+
+            createBoard() {
+                this.gameBoard.innerHTML = '';
+                this.gameBoard.style.gridTemplateColumns = `repeat(${this.size}, var(--cell-size))`;
+                this.gameBoard.style.gridTemplateRows = `repeat(${this.size}, var(--cell-size))`;
+                
+                for (let row = 0; row < this.size; row++) {
+                    for (let col = 0; col < this.size; col++) {
+                        const cell = document.createElement('div');
+                        cell.className = 'game-cell';
+                        cell.dataset.row = row;
+                        cell.dataset.col = col;
+                        this.gameBoard.appendChild(cell);
+                    }
+                }
+            }
+
+            createHints() {
+                const hints = this.sampleHints[this.size] || this.generateRandomHints();
+                
+                // 创建顶部提示
+                this.topHints.innerHTML = '';
+                for (let col = 0; col < this.size; col++) {
+                    const column = document.createElement('div');
+                    column.className = 'top-hint-column';
+                    column.style.width = 'var(--cell-size)';
+                    column.style.fontSize = 'var(--hint-font-size)';
+                    
+                    const colHints = hints.cols[col] || [0];
+                    colHints.forEach(num => {
+                        if (num > 0) {
+                            const hint = document.createElement('div');
+                            hint.textContent = num;
+                            column.appendChild(hint);
+                        }
+                    });
+                    
+                    this.topHints.appendChild(column);
+                }
+                
+                // 创建左侧提示
+                this.leftHints.innerHTML = '';
+                for (let row = 0; row < this.size; row++) {
+                    const rowDiv = document.createElement('div');
+                    rowDiv.className = 'left-hint-row';
+                    rowDiv.style.height = 'var(--cell-size)';
+                    rowDiv.style.fontSize = 'var(--hint-font-size)';
+                    
+                    const rowHints = hints.rows[row] || [0];
+                    rowHints.forEach(num => {
+                        if (num > 0) {
+                            const hint = document.createElement('div');
+                            hint.textContent = num;
+                            rowDiv.appendChild(hint);
+                        }
+                    });
+                    
+                    this.leftHints.appendChild(rowDiv);
+                }
+            }
+
+            generateRandomHints() {
+                const hints = { rows: [], cols: [] };
+                for (let i = 0; i < this.size; i++) {
+                    hints.rows.push([Math.floor(Math.random() * this.size/2) + 1]);
+                    hints.cols.push([Math.floor(Math.random() * this.size/2) + 1]);
+                }
+                return hints;
+            }
+
+            updateStyles() {
+                const root = document.documentElement;
+                const containerWidth = Math.min(window.innerWidth - 40, 600);
+                const maxCellSize = Math.floor((containerWidth - 100) / (this.size + 1));
+                const cellSize = Math.max(Math.min(maxCellSize, 50), 25);
+                const fontSize = Math.max(Math.floor(cellSize * 0.25), 10);
+                
+                root.style.setProperty('--cell-size', `${cellSize}px`);
+                root.style.setProperty('--hint-font-size', `${fontSize}px`);
+                
+                // 更新空白角落大小
+                const emptyCorner = document.querySelector('.empty-corner');
+                const hintWidth = Math.max(cellSize * 1.2, 60);
+                emptyCorner.style.width = `${hintWidth}px`;
+                emptyCorner.style.height = `${hintWidth}px`;
+            }
+
+            bindEvents() {
+                // 大小选择
+                this.sizeSelect.addEventListener('change', (e) => {
+                    this.size = parseInt(e.target.value);
+                    this.initializeGame();
+                });
+
+                // 重置按钮
+                this.resetBtn.addEventListener('click', () => {
+                    this.initializeGame();
+                });
+
+                // 模式切换
+                this.modeToggle.addEventListener('change', (e) => {
+                    this.isMarkMode = e.target.checked;
+                    this.currentModeDisplay.textContent = this.isMarkMode ? '标记模式 (×)' : '填充模式 (■)';
+                    this.currentModeDisplay.style.color = this.isMarkMode ? '#FF3B30' : '#007AFF';
+                });
+
+                // 格子点击事件
+                this.gameBoard.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('game-cell')) {
+                        this.handleCellClick(e.target);
+                    }
+                });
+
+                // 阻止iOS长按菜单
+                this.gameBoard.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                });
+
+                // 阻止iOS双击缩放
+                let lastTouchEnd = 0;
+                this.gameBoard.addEventListener('touchend', (e) => {
+                    const now = Date.now();
+                    if (now - lastTouchEnd <= 300) {
+                        e.preventDefault();
+                    }
+                    lastTouchEnd = now;
+                }, false);
+
+                // 窗口大小变化时重新计算样式
+                window.addEventListener('resize', () => {
+                    this.updateStyles();
+                });
+            }
+
+            handleCellClick(cell) {
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                const currentState = this.board[row][col];
+
+                if (this.isMarkMode) {
+                    // 标记模式：空白 -> 标记为空 -> 空白
+                    if (currentState === 0) {
+                        this.board[row][col] = 2;
+                        cell.className = 'game-cell marked-empty';
+                    } else if (currentState === 2) {
+                        this.board[row][col] = 0;
+                        cell.className = 'game-cell';
+                    }
+                    // 如果是填充状态，不改变
+                } else {
+                    // 填充模式：空白 -> 填充 -> 空白
+                    if (currentState === 0) {
+                        this.board[row][col] = 1;
+                        cell.className = 'game-cell filled';
+                    } else if (currentState === 1) {
+                        this.board[row][col] = 0;
+                        cell.className = 'game-cell';
+                    }
+                    // 如果是标记状态，不改变
+                }
+
+                // 添加点击反馈
+                cell.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    cell.style.transform = '';
+                }, 100);
+            }
+
+            // 重置游戏
+            reset() {
+                this.initializeGame();
+            }
+        }
+
+        // 页面加载完成后初始化游戏
+        document.addEventListener('DOMContentLoaded', () => {
+            window.game = new NonogramGame();
+        });
+
+        // 防止iOS Safari的橡皮筋效果
+        document.addEventListener('touchmove', function(e) {
+            if (e.scale !== 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>

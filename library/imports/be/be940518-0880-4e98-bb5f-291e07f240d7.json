@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shuangbei",
+    "texture": "6ba4531e-7941-4860-bef6-6dd798b16168",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      87,
+      55
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      87,
+      55
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

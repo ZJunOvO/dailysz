@@ -1,0 +1,248 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "gameWin",
+  "_duration": 2.6666666666666665,
+  "sample": 30,
+  "events": [
+    {
+      "frame": 0.5,
+      "func": "winSpScaleAni",
+      "params": [
+        ""
+      ]
+    }
+  ],
+  "curveData": {
+    "paths": {
+      "win": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            }
+          ]
+        }
+      },
+      "win/winAni/winCircleMask": {
+        "props": {
+          "width": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": 1800
+            }
+          ],
+          "height": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": 1800
+            }
+          ]
+        }
+      },
+      "win/winAni/winRectMask/winLight": {
+        "props": {
+          "width": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": 1808
+            }
+          ],
+          "height": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.5,
+              "value": 1808
+            }
+          ]
+        }
+      },
+      "win/winAni/winRectMask": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            },
+            {
+              "frame": 0.5,
+              "value": false
+            }
+          ]
+        }
+      },
+      "win/winAni/winCircleMask/winSpParent/win2": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": false
+            },
+            {
+              "frame": 0.5,
+              "value": true
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 255
+            },
+            {
+              "frame": 1,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "down": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.06666666666666667,
+              "value": 20
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": -360
+            }
+          ],
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": false
+            }
+          ]
+        }
+      },
+      "up": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": 200
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.2,
+              "value": 255
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "map": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            },
+            {
+              "frame": 0.5,
+              "value": false
+            }
+          ]
+        }
+      },
+      "bg/winBg": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            }
+          ]
+        }
+      },
+      "bg": {
+        "props": {
+          "y": [
+            {
+              "frame": 1,
+              "value": 0,
+              "curve": "linear"
+            },
+            {
+              "frame": 2.3333333333333335,
+              "value": -1600
+            }
+          ]
+        }
+      },
+      "win/top": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 2.1666666666666665,
+              "value": 0
+            },
+            {
+              "frame": 2.3333333333333335,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "win/mid": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 2.3333333333333335,
+              "value": 0
+            },
+            {
+              "frame": 2.5,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "win/down": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 2.5,
+              "value": 0
+            },
+            {
+              "frame": 2.6666666666666665,
+              "value": 255
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lupin_2",
+    "texture": "a699a0a5-52ac-4ee9-87e9-f5acc1d1af43",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      38,
+      36
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      38,
+      36
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

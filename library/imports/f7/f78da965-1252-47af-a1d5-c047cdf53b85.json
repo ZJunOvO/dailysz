@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_bfyhf_srk2",
+    "texture": "5cc627d9-2721-4bbe-b318-b29b8133d2df",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      103,
+      58
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      103,
+      58
+    ],
+    "capInsets": [
+      39,
+      0,
+      42,
+      0
+    ]
+  }
+}

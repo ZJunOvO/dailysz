@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_mrtz_jtx",
+    "texture": "768ecc02-7798-4809-8f23-a45d3cf90d24",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      55,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      55,
+      33
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

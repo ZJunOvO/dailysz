@@ -1,0 +1,90 @@
+CCEffect %{
+  techniques: 
+    - 
+      passes: 
+        - 
+          blendState: 
+            targets: 
+              - 
+                blend: true
+          rasterizerState: 
+            cullMode: 0
+          properties: 
+            size: 
+              value: 
+                - 1
+                - 1
+              editor: 
+                tooltip: "节点尺寸"
+            center: 
+              value: 
+                - 0.5
+                - 0.5
+              editor: 
+                tooltip: "中心点 (左上角为原点)"
+            width: 
+              value: 
+                - 1
+              editor: 
+                tooltip: "宽 (目标宽度 / 节点宽度)"
+            height: 
+              value: 
+                - 1
+              editor: 
+                tooltip: "九宫格下标"
+          vert: "vs"
+          frag: "fs"
+
+    }%
+    
+    CCProgram vs %{
+        
+precision highp float;
+#include <cc-global>
+
+in vec3 a_position;
+in vec2 a_uv0;
+in vec4 a_color;
+out vec2 v_uv0;
+out vec4 v_color;
+void main () {
+  gl_Position = cc_matViewProj * vec4(a_position, 1);
+  v_uv0 = a_uv0;
+  v_color = a_color;
+  vec4 pos = vec4(a_position, 1);
+}
+    }%
+    
+    CCProgram fs %{
+        
+precision highp float;
+in vec2 v_uv0;
+in vec4 v_color;
+uniform sampler2D texture;
+uniform Properties {
+  vec2 center;
+  vec2 size;
+  float width;
+  float height;
+};
+void main () {
+  vec4 color = v_color;
+  int part = int(height);
+  int row = int(float(part - 1) / 3.0);
+  int col = (part - 1) - (row * 3);
+  float minX = float(col) / 3.0;
+  float maxX = float(col + 1) / 3.0;
+  float minY = float(row) / 3.0;
+  float maxY = float(row + 1) / 3.0;
+  if ( v_uv0.x <= maxX && v_uv0.y <= maxY) {
+      color *= texture(texture, v_uv0);
+  }else if( v_uv0.x >= maxX && v_uv0.y <= minY){
+    color *= texture(texture, v_uv0);
+  }else {
+      discard;
+  }
+  color.a *= v_color.a;
+  gl_FragColor = color;
+}
+    }%
+    

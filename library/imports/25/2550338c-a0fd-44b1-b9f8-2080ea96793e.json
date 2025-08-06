@@ -1,0 +1,19 @@
+{
+  "__type__": "cc.Material",
+  "_name": "jigswaw",
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_ALPHA_TEST": false
+      },
+      "props": {
+        "texture": {
+          "__uuid__": "cf491d28-d669-42e4-9ecb-1a83c7d0026c"
+        }
+      }
+    }
+  },
+  "_effectAsset": {
+    "__uuid__": "8c1ae0e4-ba73-4166-a37c-3bf59e6875fc"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "libao2",
+    "texture": "3fa587f7-51eb-43a3-8951-db6526a4fb1b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      248,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      248,
+      56
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

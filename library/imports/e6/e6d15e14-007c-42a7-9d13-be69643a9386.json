@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_rw_tou",
+    "texture": "0e506cdb-f1bb-4348-9034-9eff41e4e4fb",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      720,
+      178
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      720,
+      178
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

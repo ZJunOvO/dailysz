@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试调试</title>
+    <style>
+        .test-cell {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 1px solid #ccc;
+            margin: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .test-cell.flip-enter {
+            animation: modern-flip-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes modern-flip-reveal {
+            0% {
+                transform: perspective(400px) rotateY(-90deg) scale(0.7);
+                opacity: 0;
+                box-shadow: 0 0 0 rgba(255, 107, 157, 0);
+            }
+            25% {
+                transform: perspective(400px) rotateY(-45deg) scale(0.85);
+                opacity: 0.5;
+                box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+            }
+            50% {
+                transform: perspective(400px) rotateY(0deg) scale(1.15);
+                opacity: 0.8;
+                box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+            }
+            75% {
+                transform: perspective(400px) rotateY(10deg) scale(1.05);
+                opacity: 0.95;
+                box-shadow: 0 6px 20px rgba(255, 107, 157, 0.2);
+            }
+            100% {
+                transform: perspective(400px) rotateY(0deg) scale(1);
+                opacity: 1;
+                box-shadow: 0 2px 8px rgba(255, 107, 157, 0.1);
+            }
+        }
+        
+        .test-cell.filled {
+            background: #ff6b9d;
+        }
+        
+        .test-cell.marked-empty::after {
+            content: "×";
+            font-size: 20px;
+        }
+        
+        .mode-switch {
+            margin: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+        
+        .mode-btn {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .mode-btn.active {
+            background: #ff6b9d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>调试测试页面</h1>
+    
+    <div class="mode-switch">
+        <button class="mode-btn active" onclick="setMode(false)">填充 ■</button>
+        <button class="mode-btn" onclick="setMode(true)">标记 ×</button>
+    </div>
+    
+    <div id="test-grid" style="display: grid; grid-template-columns: repeat(5, 52px); gap: 1px;">
+        <!-- 25个测试格子 -->
+    </div>
+    
+    <script>
+        let isMarkMode = false;
+        let board = Array(5).fill().map(() => Array(5).fill(0));
+        
+        // 创建格子
+        const grid = document.getElementById('test-grid');
+        for (let i = 0; i < 25; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'test-cell';
+            cell.onclick = () => handleCellClick(Math.floor(i/5), i%5, cell);
+            grid.appendChild(cell);
+        }
+        
+        function setMode(mark) {
+            isMarkMode = mark;
+            document.querySelectorAll('.mode-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === (mark ? 1 : 0));
+            });
+            console.log('模式切换到:', mark ? '标记模式' : '填充模式');
+        }
+        
+        function handleCellClick(row, col, element) {
+            console.log('点击格子:', row, col, '当前模式:', isMarkMode ? '标记' : '填充');
+            
+            const currentState = board[row][col];
+            
+            if (isMarkMode) {
+                if (currentState === 0) {
+                    board[row][col] = 2;
+                    element.classList.add('marked-empty');
+                    element.classList.remove('filled');
+                } else if (currentState === 2) {
+                    board[row][col] = 0;
+                    element.classList.remove('marked-empty', 'filled');
+                }
+            } else {
+                if (currentState === 0) {
+                    board[row][col] = 1;
+                    element.classList.add('filled');
+                    element.classList.remove('marked-empty');
+                } else if (currentState === 1) {
+                    board[row][col] = 0;
+                    element.classList.remove('filled', 'marked-empty');
+                }
+            }
+            
+            // 添加动画
+            element.classList.add('flip-enter');
+            setTimeout(() => {
+                element.classList.remove('flip-enter');
+            }, 600);
+        }
+    </script>
+</body>
+</html>

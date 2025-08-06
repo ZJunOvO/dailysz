@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "anniu_1",
+    "texture": "ffb7c536-b0f5-4746-b364-4d9dfea4190f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      42,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      42,
+      75
+    ],
+    "capInsets": [
+      5,
+      29,
+      29,
+      39
+    ]
+  }
+}

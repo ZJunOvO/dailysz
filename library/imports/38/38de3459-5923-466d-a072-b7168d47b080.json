@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_mrtz_riqi",
+    "texture": "53fe89d9-b751-4c91-8a60-42bf2bc8b6ef",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      78,
+      45
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      79,
+      45
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

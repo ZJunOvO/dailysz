@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_ylq",
+    "texture": "9c310ba6-d124-4239-98ed-41d61c9da7bf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      99,
+      88
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      99,
+      88
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

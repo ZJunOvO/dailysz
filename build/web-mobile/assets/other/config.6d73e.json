@@ -1,0 +1,35 @@
+{
+    "paths": {
+        "a40vyYTSdFG6iMcg3l9OCz": [
+            "1",
+            "cc.TextAsset"
+        ],
+        "68O/FfOC5CPbtUDUUZJaC8": [
+            "2",
+            "cc.TextAsset"
+        ]
+    },
+    "uuids": [
+        "68O/FfOC5CPbtUDUUZJaC8",
+        "a40vyYTSdFG6iMcg3l9OCz"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {},
+    "name": "other",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "68O/FfOC5CPbtUDUUZJaC8",
+            "cf8cd",
+            "a40vyYTSdFG6iMcg3l9OCz",
+            "58585"
+        ],
+        "native": []
+    }
+}

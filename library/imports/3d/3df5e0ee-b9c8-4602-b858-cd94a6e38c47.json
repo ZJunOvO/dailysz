@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "logo_qmxb",
+    "texture": "424e4e62-cfeb-4c71-8c57-ffdb1da0db7b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      457,
+      243
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      457,
+      243
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "qw_line_ticket",
+    "texture": "f97821c1-554d-4cd5-b505-340fac1ee2cf",
+    "atlas": "",
+    "rect": [
+      4,
+      0,
+      161,
+      171
+    ],
+    "offset": [
+      -1.5,
+      1.5
+    ],
+    "originalSize": [
+      172,
+      174
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
